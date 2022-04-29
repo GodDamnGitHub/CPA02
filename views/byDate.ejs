@@ -1,0 +1,35 @@
+<h1>Covid-19 data of <%= currentState %> from <%= date1%> to  <%= date2%></h1>
+<hr>
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>New Case</th>
+            <th>Total Case</th>
+            <th>New Death</th>
+            <th>Total Death</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+    <% for (item of cdata) {
+        let date = item.submission_date.toISOString().split("T")[0];
+        let new_case = item.new_case;
+        let total_case = item.tot_case;
+        let new_death = item.new_death;
+        let total_death = item.tot_death;
+         %>
+      <tr class="mb-2"> 
+        <td><%= date %></td>
+        <td><%= new_case %></td>
+        <td><%= total_case %></td>
+        <td><%= new_death %></td>
+        <td><%= total_death %></td>
+
+      </tr>
+    <% } %>
+    </tbody>
+</table>
+
+<pre>
+
+</pre>
